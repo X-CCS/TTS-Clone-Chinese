@@ -332,7 +332,8 @@ def preprocess_data_aishell(datasets_root: Path, out_dir: Path, n_processes: int
         v = v.strip().replace("\n","").split(" ")
         dict_info[v[0]] = " ".join(v[1:])
 
-    input_dirs = [dataset_root.joinpath("wav/train")]
+    # input_dirs = [dataset_root.joinpath("wav/train")]
+    input_dirs = [dataset_root.joinpath("train")]
     print("\n    ".join(map(str, ["Using data from:"] + input_dirs)))
     assert all(input_dir.exists() for input_dir in input_dirs)
     
@@ -418,6 +419,7 @@ def preprocess_aidatatang_200zh(datasets_root: Path, out_dir: Path, n_processes:
 
     dict_info = {}
     transcript_dirs = dataset_root.joinpath("transcript/aidatatang_200_zh_transcript.txt")
+    # transcript_dirs = dataset_root.joinpath("/media/psdz/data3/pub_data/data/urun_tandong_video/data/aidatatang_200zh/transcript/aidatatang_200_zh_transcript.txt")
     with open(transcript_dirs,"rb") as fp:
         dict_transcript = [v.decode() for v in fp]
 
