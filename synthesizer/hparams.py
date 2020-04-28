@@ -4,7 +4,8 @@ from tensorflow.contrib.training import HParams
 hparams = HParams(
     # Comma-separated list of cleaners to run on text prior to training and eval. For non-English
     # text, you may want to use "basic_cleaners" or "transliteration_cleaners".
-    cleaners="english_cleaners",
+    # cleaners="english_cleaners",
+    cleaners="transliteration_cleaners",
     
     # If you only have 1 GPU or want to use only one GPU, please set num_gpus=0 and specify the 
     # GPU idx on run. example:
@@ -27,7 +28,7 @@ hparams = HParams(
     
     # IMPORTANT NOTE: If using N GPUs, please multiply the tacotron_batch_size by N below in the 
     # hparams! (tacotron_batch_size = 32 * N)
-    # Never use lower batch size than 32 on a single GPU!
+    # Never use lower batch size than 32 on a single GPU! 
     # Same applies for Wavenet: wavenet_batch_size = 8 * N (wavenet_batch_size can be smaller than
     #  8 if GPU is having OOM, minimum 2)
     # Please also apply the synthesis batch size modification likewise. (if N GPUs are used for 
@@ -44,8 +45,8 @@ hparams = HParams(
     # Hardware setup: Default supposes user has only one GPU: "/gpu:0" (Tacotron only for now! 
     # WaveNet does not support multi GPU yet, WIP)
     # Synthesis also uses the following hardware parameters for multi-GPU parallel synthesis.
-    tacotron_gpu_start_idx=0,  # idx of the first GPU to be used for Tacotron training.
-    tacotron_num_gpus=1,  # Determines the number of gpus in use for Tacotron training.
+    tacotron_gpu_start_idx=1,  # idx of the first GPU to be used for Tacotron training. # 0
+    tacotron_num_gpus=2,  # Determines the number of gpus in use for Tacotron training. # 1
     split_on_cpu=True,
     # Determines whether to split data on CPU or on first GPU. This is automatically True when 
 	# more than 1 GPU is used.

@@ -44,12 +44,13 @@ python synthesizer_train.py my_run /media/psdz/data3/pub_data/data/urun_tandong_
 python synthesizer_preprocess_embeds.py /media/psdz/data3/data/aidatatang_200zh/SV2TTS/synthesizer
 
 ![J4nsER.png](https://s1.ax1x.com/2020/04/28/J4nsER.png)
+
+python synthesizer_train.py my_run /media/psdz/data3/data/aidatatang_200zh/SV2TTS/synthesizer
 ```
 + 运行预处理data_thchs30
 +[data_thchs30数据库集：](/home/chenchangshu/data/data_thchs30)
 ```
 python synthesizer_preprocess_audio.py /home/chenchangshu/data/ --skip_existing -d thchs30
-
 
 ```
 + [data_aishell数据库集：](/home/chenchangshu/data/data_aishell /home/chenchangshu/data/data_aishell/data_aishell)
@@ -86,13 +87,6 @@ python synthesizer_preprocess_audio.py --skip_existing
 
 cp -r  /media/psdz/data3/data
 mv -r /home/chenchangshu/data/ ./
-
-git config --global user.name "X-CCS"
-git config --global user.email "CCS695146667@163.com"
-ssh-keygen -t rsa -C "CCS695146667@163.com"
-
-/Users/ccs/.ssh/id_rsa
-
-'encoder/saved_models/pretrained.pt'
-
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDms94ObdcqOdTiCucdnZSGi4A4jt1c/B3N5w15q60V/xeByCD6GbrLqYeO+twWEaQmtJxWkVk4PPfUAY    xIG0T4gpO5C2ZiFjLwsm8s4Cf2DVkZC8b6AwQM+wmHLVtWZ5YG2WnFIhostbRZWAFnAFDiIhjucetNeEck/HArfJpnnByQeOYJVvoHjmpUUd+04AbMGUh5    FIGRL0OZGeY/DQ0vz4JWn+NZeMDfNugMhFziw0szHC2FzMFdXs5tZ2JlG7m8xjzbC5HXt+eGX9wDHc68Xd472X6/QmU3Skw8MtCCQMs1ljNyqfazUNmKWC    hbWdse1+6b5twd/4EkneU4XJsF CCS695146667@163.com
+CUDA_VISIBLE_DEVICES=2
+export CUDA_VISIBLE_DEVICES=1，2
+echo $CUDA_VISIBLE_DEVICES
