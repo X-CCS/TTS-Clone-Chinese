@@ -88,5 +88,5 @@ python synthesizer_preprocess_audio.py --skip_existing
 cp -r  /media/psdz/data3/data
 mv -r /home/chenchangshu/data/ ./
 CUDA_VISIBLE_DEVICES=2
-export CUDA_VISIBLE_DEVICES=1，2
-echo $CUDA_VISIBLE_DEVICES
+export CUDA_VISIBLE_DEVICES=1,2,3 
+echo $CUDA_VISIBLE_DEVICES # 
